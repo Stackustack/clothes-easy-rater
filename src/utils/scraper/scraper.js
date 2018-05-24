@@ -34,32 +34,6 @@ const fetchAllDataProduct = async (productNum) => {
     });
 }
 
-// const getProductDataAsync =  (productNum) => {
-//     let prodData = {
-//         reviews: []
-//     }
-
-//     return Promise.all(
-//         appCountries.map(countryApp => {
-
-//             return scrapWebPage(countryApp, productNum).then(parsedWebPage => {
-//                 let countryData = {}
-
-//                 countryData.countryCode  = countryApp.countryCode
-//                 countryData.ratingCount  = parsedWebPage.aggregateRating.ratingCount
-//                 countryData.ratingValue  = parsedWebPage.aggregateRating.ratingValue
-//                 countryData.reviews      = parsedWebPage.reviews
-
-//                 return countryData
-//             });
-//         })   
-//     ).then(results => {
-//         prodData.reviews = results
-//         return prodData;
-//     });
-// }
-
-
 const scrapWebPage = async (countryAppData, productNumber) => {
     const mainUrl = process.env.REACT_APP_SHOP_MAIN_URL
     const shopUrl = `https://www.${mainUrl}.${countryAppData.countryCode}/${countryAppData.catalogTranslation}/?q=${productNumber}`
@@ -83,11 +57,5 @@ const scrapWebPage = async (countryAppData, productNumber) => {
             return scrapedWebPageJson
         })
 }
-
-// const addGeneralData = (parsedData) => {
-//     summarizedProductData.image = parsedData.image
-//     summarizedProductData.color = parsedData.color
-//     summarizedProductData.name = parsedData.name
-// }
 
 export default fetchAllDataProduct
