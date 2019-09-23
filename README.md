@@ -1,4 +1,6 @@
 # Clothes Rating Comparator
+WARNING!
+App is outdated, Zalando changed the way they're dealing with CORS, current hack doesn't work.
 
 App to aggregate rating about products from app that separates ratings between countries. 
 
